@@ -1,0 +1,100 @@
+{
+  "results": [
+    {
+      "page": "Home",
+      "url": "http://localhost:3000/",
+      "scores": {
+        "performance": 94,
+        "accessibility": 100,
+        "bestPractices": 96,
+        "seo": 100
+      },
+      "metrics": {
+        "fcp": 2033.761,
+        "lcp": 2636.1364999999996,
+        "tbt": 91,
+        "cls": 0.00006398634315855767,
+        "si": 2679.872358025574,
+        "tti": 2711.491
+      }
+    },
+    {
+      "page": "What We Do",
+      "url": "http://localhost:3000/what-we-do",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcp": 821.0661,
+        "lcp": 1256.8427990661621,
+        "tbt": 231,
+        "cls": 0.00006398634315855767,
+        "si": 1256.620193735101,
+        "tti": 1259.2927990661622
+      }
+    },
+    {
+      "page": "Services",
+      "url": "http://localhost:3000/services",
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcp": 892.2375,
+        "lcp": 1255.5041282653808,
+        "tbt": 166,
+        "cls": 0.00006398634315855767,
+        "si": 916.506731624436,
+        "tti": 1273.5841455459595
+      }
+    },
+    {
+      "page": "Portfolio",
+      "url": "http://localhost:3000/portfolio",
+      "scores": {
+        "performance": 94,
+        "accessibility": 94,
+        "bestPractices": 96,
+        "seo": 100
+      },
+      "metrics": {
+        "fcp": 981.0654,
+        "lcp": 1510.842099066162,
+        "tbt": 291,
+        "cls": 0.00006398634315855767,
+        "si": 1393.6159380362485,
+        "tti": 1532.0675844863893
+      }
+    },
+    {
+      "page": "Contact",
+      "url": "http://localhost:3000/contact",
+      "scores": {
+        "performance": 96,
+        "accessibility": 96,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcp": 882.4362,
+        "lcp": 1167.4362,
+        "tbt": 228.0000000000001,
+        "cls": 0.00582242127762638,
+        "si": 882.4362,
+        "tti": 1261.2362000000003
+      }
+    }
+  ],
+  "allPagesPass": false,
+  "checks": {
+    "performancePass": true,
+    "lcpPass": false,
+    "clsPass": true
+  }
+}
