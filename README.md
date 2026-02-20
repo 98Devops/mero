@@ -1,5 +1,11 @@
 # Mero Tech - AI & Software Solutions Website
 
+<div align="center">
+  <img src="public/images/hero-background.png" alt="Mero Tech Banner" width="100%" />
+</div>
+
+<br />
+
 A premium, highly interactive marketing website showcasing AI automation, internal tools, and cloud infrastructure services. Built with modern web technologies and featuring stunning animations, this site demonstrates technical excellence through its implementation.
 
 ## 🎯 Purpose
