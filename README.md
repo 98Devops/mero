@@ -1,7 +1,7 @@
 # Mero Tech - AI & Software Solutions Website
 
 <div align="center">
-  <img src="public/images/hero-background.png" alt="Mero Tech Banner" width="100%" />
+  <img src="public/images/github-banner.png" alt="Mero Tech Banner" width="100%" />
 </div>
 
 <br />
