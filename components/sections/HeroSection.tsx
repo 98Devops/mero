@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
@@ -8,13 +8,9 @@ import Button from "@/components/ui/Button";
 import { fadeInUpVariant, staggerContainerVariant, floatVariant } from "@/styles/animations";
 
 export default function HeroSection() {
-  // Parallax effect
+  // Parallax effect (disabled on mobile for better performance)
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  
-  const springConfig = { damping: 25, stiffness: 150 };
-  const x = useSpring(useTransform(mouseX, [-0.5, 0.5], [-20, 20]), springConfig);
-  const y = useSpring(useTransform(mouseY, [-0.5, 0.5], [-20, 20]), springConfig);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -40,13 +36,14 @@ export default function HeroSection() {
           src="/images/hero-background.png"
           alt="Mero Tech Hero Background"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           priority
           quality={90}
           sizes="100vw"
+          style={{ objectPosition: 'center center' }}
         />
         {/* Gradient overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background-primary/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background-primary/90" />
         
         {/* Animated gradient mesh overlay */}
         <motion.div
@@ -98,16 +95,16 @@ export default function HeroSection() {
         ))}
       </div>
 
-      {/* Content with parallax */}
+      {/* Content with parallax - disable on mobile */}
       <motion.div
-        className="relative z-10 container mx-auto px-6 md:px-12 lg:px-24 text-center"
-        style={{ x, y }}
+        className="relative z-10 container mx-auto px-4 sm:px-6 md:px-12 lg:px-24 text-center"
+        style={{ x: 0, y: 0 }}
       >
         <motion.div
           variants={staggerContainerVariant}
           initial="hidden"
           animate="visible"
-          className="space-y-6 md:space-y-8 max-w-5xl mx-auto"
+          className="space-y-4 sm:space-y-6 md:space-y-8 max-w-5xl mx-auto"
         >
           {/* Floating badge */}
           <motion.div
@@ -115,8 +112,8 @@ export default function HeroSection() {
             animate="animate"
             className="inline-block"
           >
-            <div className="px-4 py-2 rounded-full bg-accent-primary/10 border border-accent-primary/30 backdrop-blur-sm">
-              <span className="text-accent-primary text-sm font-semibold">
+            <div className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-accent-primary/10 border border-accent-primary/30 backdrop-blur-sm">
+              <span className="text-accent-primary text-xs sm:text-sm font-semibold">
                 ✨ Transforming Businesses with AI
               </span>
             </div>
@@ -125,7 +122,7 @@ export default function HeroSection() {
           {/* Headline with typewriter effect */}
           <motion.h1
             variants={fadeInUpVariant}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-2xl"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight drop-shadow-2xl px-2"
           >
             <span className="inline-block bg-gradient-to-r from-white via-accent-primary to-accent-secondary bg-clip-text text-transparent animate-gradient">
               Building Intelligent Systems
@@ -137,7 +134,7 @@ export default function HeroSection() {
           {/* Subheadline */}
           <motion.p
             variants={fadeInUpVariant}
-            className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg px-4"
           >
             AI Automation. Internal Tools. Scalable Infrastructure.
           </motion.p>
@@ -145,7 +142,7 @@ export default function HeroSection() {
           {/* CTA Buttons with enhanced animations */}
           <motion.div
             variants={fadeInUpVariant}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-2 sm:pt-4 px-4"
           >
             <Link href="/contact">
               <motion.div
@@ -178,16 +175,16 @@ export default function HeroSection() {
           {/* Scroll indicator */}
           <motion.div
             variants={fadeInUpVariant}
-            className="pt-12"
+            className="pt-8 sm:pt-12"
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               className="inline-flex flex-col items-center gap-2 text-white/70"
             >
-              <span className="text-sm drop-shadow">Scroll to explore</span>
+              <span className="text-xs sm:text-sm drop-shadow">Scroll to explore</span>
               <svg
-                className="w-6 h-6"
+                className="w-5 h-5 sm:w-6 sm:h-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
